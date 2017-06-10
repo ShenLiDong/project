@@ -11,15 +11,12 @@
 	public function __construct()
 	{	
 		parent::__construct();
+		$this->load->library('excel/excel');
 
 	}
 
 	public function index()
 	{
-		// $this->load->helper('url');
-		$this->config->load('export',true);
-		$con = $this->config->item('export');
-		print_r($con);exit;
 		session_start();
 		if( isset($_SESSION['user_admin']) ){
 			$this->load->view('learn/common');
